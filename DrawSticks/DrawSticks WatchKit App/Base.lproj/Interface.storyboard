@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="15G17023" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="DrawSticks_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="Draw Sticks!!" id="RsK-eH-0R9">
+                            <connections>
+                                <action selector="drawSticksPushed" destination="AgC-eL-Hgc" id="N9u-R1-RLT"/>
+                            </connections>
+                        </button>
+                        <label width="156" height="59" alignment="left" text="John Smith" textAlignment="center" id="JZ0-bA-nm3">
+                            <color key="textColor" red="1" green="0.45310664044450322" blue="0.069483987852067219" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <button width="1" alignment="left" title="Next" id="gVB-4v-Axb">
+                            <connections>
+                                <action selector="nextPushed" destination="AgC-eL-Hgc" id="4ts-vp-zzQ"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="drawSticksButton" destination="RsK-eH-0R9" id="R4T-MW-T9G"/>
+                        <outlet property="drawSticksPushed" destination="RsK-eH-0R9" id="0mP-rM-Jci"/>
+                        <outlet property="nextButton" destination="gVB-4v-Axb" id="bTS-p5-0Ci"/>
+                        <outlet property="nextPushed" destination="gVB-4v-Axb" id="Dqb-Z3-HnH"/>
+                        <outlet property="studentLabel" destination="JZ0-bA-nm3" id="dln-UE-Vwl"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="34" y="38.794871794871796"/>
+        </scene>
+    </scenes>
+</document>
