@@ -11,7 +11,7 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-
+    
     @IBOutlet var drawSticksButton: WKInterfaceButton!
     @IBOutlet var studentLabel: WKInterfaceLabel!
     @IBOutlet var nextButton: WKInterfaceButton!
@@ -31,14 +31,12 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    
     @IBAction func drawSticksPushed() {
+        let millis = Date().millisecondsSince1970
         
+        // TODO: Call service for list
         
-        
-        
-        let millis = Int((Date().timeIntervalSince1970 * 1000.0).rounded())
-        print(millis)
     }
     
     @IBAction func nextPushed() {
@@ -47,13 +45,12 @@ class InterfaceController: WKInterfaceController {
 }
 
 
-//
-//extension Date {
-//    var millisecondsSince1970:Int {
-//        return Int((self.timeIntervalSince1970 * 1000.0).rounded())
-//    }
-//    
-//    init(milliseconds:Int) {
-//        self = Date(timeIntervalSince1970: TimeInterval(milliseconds / 1000))
-//    }
-//}
+extension Date {
+    var millisecondsSince1970:Int64 {
+        return Int64((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+    
+    init(milliseconds:Int) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds / 1000))
+    }
+}
