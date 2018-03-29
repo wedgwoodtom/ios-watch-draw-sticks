@@ -19,6 +19,7 @@
 		785A6D40206C387B00572399 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785A6D3F206C387B00572399 /* InterfaceController.swift */; };
 		785A6D42206C387B00572399 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785A6D41206C387B00572399 /* ExtensionDelegate.swift */; };
 		785A6D44206C387B00572399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 785A6D43206C387B00572399 /* Assets.xcassets */; };
+		78E20E9A206C4DE500140248 /* TeacherDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E20E99206C4DE500140248 /* TeacherDataClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		785A6D41206C387B00572399 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		785A6D43206C387B00572399 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		785A6D45206C387B00572399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78E20E99206C4DE500140248 /* TeacherDataClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherDataClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				785A6D3F206C387B00572399 /* InterfaceController.swift */,
+				78E20E99206C4DE500140248 /* TeacherDataClient.swift */,
 				785A6D41206C387B00572399 /* ExtensionDelegate.swift */,
 				785A6D43206C387B00572399 /* Assets.xcassets */,
 				785A6D45206C387B00572399 /* Info.plist */,
@@ -301,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E20E9A206C4DE500140248 /* TeacherDataClient.swift in Sources */,
 				785A6D42206C387B00572399 /* ExtensionDelegate.swift in Sources */,
 				785A6D40206C387B00572399 /* InterfaceController.swift in Sources */,
 			);
@@ -557,6 +561,7 @@
 				785A6D4A206C387B00572399 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		785A6D4C206C387B00572399 /* Build configuration list for PBXNativeTarget "DrawSticks WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +570,7 @@
 				785A6D4E206C387B00572399 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		785A6D50206C387B00572399 /* Build configuration list for PBXNativeTarget "DrawSticks" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +579,7 @@
 				785A6D52206C387B00572399 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -33,9 +33,27 @@ class InterfaceController: WKInterfaceController {
     }
 
     @IBAction func drawSticksPushed() {
+        
+        
+        
+        
+        let millis = Int((Date().timeIntervalSince1970 * 1000.0).rounded())
+        print(millis)
     }
     
     @IBAction func nextPushed() {
     }
     
 }
+
+
+//
+//extension Date {
+//    var millisecondsSince1970:Int {
+//        return Int((self.timeIntervalSince1970 * 1000.0).rounded())
+//    }
+//    
+//    init(milliseconds:Int) {
+//        self = Date(timeIntervalSince1970: TimeInterval(milliseconds / 1000))
+//    }
+//}

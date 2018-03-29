@@ -28,13 +28,6 @@
                             </connections>
                         </button>
                     </items>
-                    <connections>
-                        <outlet property="drawSticksButton" destination="RsK-eH-0R9" id="R4T-MW-T9G"/>
-                        <outlet property="drawSticksPushed" destination="RsK-eH-0R9" id="0mP-rM-Jci"/>
-                        <outlet property="nextButton" destination="gVB-4v-Axb" id="bTS-p5-0Ci"/>
-                        <outlet property="nextPushed" destination="gVB-4v-Axb" id="Dqb-Z3-HnH"/>
-                        <outlet property="studentLabel" destination="JZ0-bA-nm3" id="dln-UE-Vwl"/>
-                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="34" y="38.794871794871796"/>
