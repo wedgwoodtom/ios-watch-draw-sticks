@@ -9,15 +9,14 @@
 import Foundation
 
 //
-//  ScoreClient.swift
-//  TestAccessScoreService
+//  TeacherDataClient.swift
 //
-//  Created by Tom Patterson on 7/20/17.
-//  Copyright © 2017 Tom Patterson. All rights reserved.
+//  Created by Tom Patterson
+//  Copyright © 2018 Tom Patterson. All rights reserved.
 //
 //  https://medium.com/swift-programming/http-in-swift-693b3a7bf086
 //
-//  Ug! - just use Swifty FFS
+//  Ug! - just use Swifty or somthing more elegant FFS
 //
 
 import Foundation
@@ -25,40 +24,29 @@ import Foundation
 
 public class TeacherDataClient {
     
-    let SERVICE_URL = "https://tph3djc4zl.execute-api.us-west-2.amazonaws.com/test"
+    let SERVICE_URL = "https://m6ex37btfb.execute-api.us-west-2.amazonaws.com/test"
     
     public init() {
     }
     
-    public func getHighscores(userId: String, gameId: String, scoresCallback: @escaping ([String]) -> Void) {
-        let jsonRequestPayload: [String: Any] = [ "userId": userId, "gameId": gameId]
+    public func findCurrentStudents(teacherId: String, currentTime: Int64, callBack: @escaping ([String]) -> Void) {
+        let jsonRequestPayload: [String: Any] = [ "teacherId": teacherId, "currentTime": currentTime]
         
-        HTTPPostJSON(url: SERVICE_URL+"/highscores", jsonObj: jsonRequestPayload as AnyObject) { (jsonResponse: Dictionary<String, AnyObject>) in
-            scoresCallback(self.parseScores(json: jsonResponse))
+        HTTPPostJSON(url: SERVICE_URL+"/findCurrentStudents", jsonObj: jsonRequestPayload as AnyObject) { (jsonResponse: Dictionary<String, AnyObject>) in
+            callBack(self.parseData(json: jsonResponse))
         }
     }
     
-    public func submitScore(userId: String, gameId: String, score: Int, scoresCallback: @escaping ([String]) -> Void) {
-        let jsonRequestPayload: [String: Any] = [ "userId": userId, "gameId": gameId, "score": score]
+    private func parseData(json: Dictionary<String, AnyObject>) -> [String] {
+        var studentList: [String] = []
         
-        HTTPPostJSON(url: SERVICE_URL+"/submitscore", jsonObj: jsonRequestPayload as AnyObject) { (jsonResponse: Dictionary<String, AnyObject>) in
-            scoresCallback(self.parseScores(json: jsonResponse))
-        }
-    }
-    
-    private func parseScores(json: Dictionary<String, AnyObject>) -> [String] {
-        var scoreList: [String] = []
-        
-        if let scores = json["highScores"] as? [[String: Any]] {
+        if let scores = json["students"] as? [String] {
             for score in (scores) {
-                if let player = score["userId"] as? String {
-                    scoreList.append(String(player))
-                }
+                studentList.append(score)
             }
         }
-        return scoreList
+        return studentList
     }
-    
     
     // TODO: Move all this stuff to a utility class (or just use Swifty or similar)
     

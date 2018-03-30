@@ -11,13 +11,11 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-    
-    @IBOutlet var drawSticksButton: WKInterfaceButton!
+  
     @IBOutlet var studentLabel: WKInterfaceLabel!
-    @IBOutlet var nextButton: WKInterfaceButton!
-
+    
     var students: [String] = []
-    var lastStudent: Int = 0
+    var nextStudent: Int = 0
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -36,27 +34,34 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func drawSticksPushed() {
-        let millis = Date().millisecondsSince1970
-    
-        // TODO: Call service for list
-        students.shuffle()
-        lastStudent = 0
+        studentLabel.setText("Who Will It Be?")
+ 
+        let client = TeacherDataClient()
+        // TODO: Obvously, this must be configurable
+        client.findCurrentStudents(teacherId: "ww.tom@gmail.com", currentTime: Date().millisecondsSince1970) { (studs: [String]) in
+            self.students = studs
+            
+            self.students.shuffle()
+            self.nextStudent = 0
+            
+            self.nextPushed()
+        }
     }
     
     @IBAction func nextPushed() {
         if (students.count>0)
         {
-            if (lastStudent == students.count)
+            if (nextStudent == students.count)
             {
                 // shuffle again
                 students.shuffle()
-                lastStudent = -1
+                nextStudent = 0
             }
-            lastStudent = lastStudent + 1
-            studentLabel.setText(students[lastStudent])
+            studentLabel.setText(students[nextStudent])
+            nextStudent = nextStudent + 1
         }
         else {
-            studentLabel.setText("No Students Available")
+            studentLabel.setText("No Students")
         }
     }
     

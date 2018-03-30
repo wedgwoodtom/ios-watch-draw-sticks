@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="15G17023" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -19,7 +19,7 @@
                                 <action selector="drawSticksPushed" destination="AgC-eL-Hgc" id="N9u-R1-RLT"/>
                             </connections>
                         </button>
-                        <label width="156" height="59" alignment="left" text="John Smith" textAlignment="center" id="JZ0-bA-nm3">
+                        <label width="156" height="59" alignment="left" text="Who Will It Be?" textAlignment="center" id="JZ0-bA-nm3">
                             <color key="textColor" red="1" green="0.45310664044450322" blue="0.069483987852067219" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
                         <button width="1" alignment="left" title="Next" id="gVB-4v-Axb">
@@ -28,6 +28,9 @@
                             </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="studentLabel" destination="JZ0-bA-nm3" id="wIL-RB-nsM"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="34" y="38.794871794871796"/>
